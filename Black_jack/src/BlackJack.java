@@ -1,22 +1,43 @@
 
 public class BlackJack {
-	public static void main() {
-		int[] card = new int[11];
-		int[] patturn = new int[3];
-		
-		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 13; j++) {
-				String cards;
-				if (i == 1) cards = "A";	
-				else if (i == 11) cards = "K";
-				else if (i == 12) cards = "Q";
-				else if (i == 13) cards = "J";
-			}
+	String pattern; //무늬
+	String cardNumber; // 숫자
+	public void card() {
+		int rndNum1 = (int)(Math.random() * 4 ) + 1;
+		int rndNum2 = (int)(Math.random() * 11 ) + 1;
+	}
+	public void card(String rndNum1) {
+		if (rndNum1 == 1) {
+			pattern = "♠";
+		} else if (rndnum1 == 2) {
+			pattern = "♣";
+		}else if (rndnum1 == 3) {
+			pattern = "♥";
+		}
+		else if (rndnum1 == 4) {
+			pattern = "◆";
 		}
 	}
-	public static void main(String[] args) {
-		
-		
+		public void card(int rndNum2) {
+		if (rndNum2 == 1) {
+			cardNumber = "A";
+		} else if (rndNum2 == 11) {
+			cardNumber = "J";
+		}else if (rndNum2 == 12) {
+			cardNumber = "Q";
+		}else if (rndNum2 == 13) {
+			cardNumber = "K";
+		}
 		
 	}
-}
+	
+		public void cardDeck() {
+			String card1 = String.format("%s / %s",pattern,cardNumber);
+			
+		}
+	
+	
+	public static void main(String[] args) {
+		
+	}
+
