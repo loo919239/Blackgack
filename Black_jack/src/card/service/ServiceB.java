@@ -25,17 +25,11 @@ public class ServiceB {
 			
 			card[i] = patterns1 + cardNumbers1;
 			for (int j = 0; j < i; j++) {
-				rndNum1 = (int) (Math.random() * 4) + 1;
-				rndNum2 = (int) (Math.random() * 13) + 1;
-			
-				String patterns2 = service.cardPat(rndNum1);
-				String cardNumbers2 = service.cardNum(rndNum2);
-				if (patterns1==patterns2&&cardNumbers1==cardNumbers2) {
+				if (card[j].equals(card[i])) {
 					i--;
 					break;
 				}
 			}
-			card[i] = card[i];
 		}
 	}
 
@@ -52,14 +46,15 @@ public class ServiceB {
 			
 			
 		} else if (str.equalsIgnoreCase("Stop")) {
-			System.out.println("딜러의 숫자");
-			String strCardNum = "0";
-			if (service.size() > 0) {
-				strCardNum = service.get(service.size() - 1).cardNumber;
-			}
-
-			int intStdNum = Integer.valueOf(strCardNum.substring(1));
-			System.out.println(intStdNum);
+			System.out.println("");
+//			System.out.println("딜러의 숫자");
+//			String strCardNum = "0";
+//			if (service.size() > 0) {
+//				strCardNum = service.get(service.size() - 1).cardNumber;
+//			}
+//
+//			int intStdNum = Integer.valueOf(strCardNum.substring(1));
+//			System.out.println(intStdNum);
 		}
 		
 		// stop 입력 시
