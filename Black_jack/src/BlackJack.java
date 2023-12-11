@@ -1,11 +1,11 @@
+import card.model.CardDto;
 import card.service.Service;
-import card.service.ServiceB;
 
 public class BlackJack {
 
 	public static void main(String[] args) {
-		Service service = new Service();
-		ServiceB serviceB = new ServiceB();
+		CardDto service = new CardDto();
+		Service serviceB = new Service();
 		serviceB.cardDeck();
 		serviceB.start();
 		

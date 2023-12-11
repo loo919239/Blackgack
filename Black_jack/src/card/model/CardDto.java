@@ -1,38 +1,39 @@
 package card.model;
 
 public class CardDto {
-	public String pattern;
-	public String cardNumber;
-	private int point;
-	
-	public CardDto(String pattern, String cardNumber, int point) {
-		this.pattern = pattern;
-		this.cardNumber = cardNumber;
-		this.point = point;
-	}
-	
-	public CardDto(String pattern, int index) {
-		this.pattern = pattern;
-		this.cardNumber = this.numberToCardNumver(index);
-		this.point = numberToPoint(index);
-	}
-	
-	private String numberToCardNumver(int number) {
-		if (number == 1) {
-			cardNumber = "A";
-		} else if (number == 11) {
-			cardNumber = "J";
-		} else if (number == 12) {
-			cardNumber = "Q";
-		} else if (number == 13) {
-			cardNumber = "K";
+	public String pattern; // 무늬
+	public String cardNumber; // 숫자
+
+
+	public String cardPat(int rndNum1) {
+		if (rndNum1 == 1) {
+			pattern = "♠";
+		} else if (rndNum1 == 2) {
+			pattern = "♣";
+		} else if (rndNum1 == 3) {
+			pattern = "♥";
+		} else if (rndNum1 == 4) {
+			pattern = "◆";
+
 		}
-		return String.valueOf(number);
+		return String.valueOf(pattern);
+
+	}
+
+	public String cardNum(int rndNum2) {
+		if (rndNum2 == 1) {
+			cardNumber = "A";
+		} else if (rndNum2 == 11) {
+			cardNumber = "J";
+		} else if (rndNum2 == 12) {
+			cardNumber = "Q";
+		} else if (rndNum2 == 13) {
+			cardNumber = "K";
+		} else {
+			cardNumber = String.valueOf(rndNum2);
+		}
+		return String.valueOf(cardNumber);
 	}
 	
-	private int numberToPoint(int number) {
-		if (number >= 11) return 10;
-		return number;
-	}
 	
 }
