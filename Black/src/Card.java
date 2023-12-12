@@ -16,7 +16,7 @@ class Card {
     }
 
     public int getValue() {
-        if (rank.equals("Ace")) {
+        if (rank.equals("A")) {
             return 11;
         } else if (rank.equals("2") || rank.equals("3") || rank.equals("4") || rank.equals("5") || rank.equals("6") ||
                    rank.equals("7") || rank.equals("8") || rank.equals("9")) {
@@ -31,8 +31,8 @@ class Deck {
     private final List<Card> cards;
 
     public Deck() {
-        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
-        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
+        String[] suits = {"♥", "◆", "♣", "♠"};
+        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
 
         cards = new ArrayList<>();
         for (String suit : suits) {

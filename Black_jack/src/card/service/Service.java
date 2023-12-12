@@ -7,12 +7,14 @@ import java.util.Scanner;
 import card.model.CardDto;
 
 public class Service {
-	List<CardDto> service = null;
+	List<CardDto> cardDeck = null;
+	String patterns;
+	String cardNumbers;
 	String[] card;
 	Scanner scan = null;
 
 	public Service() {
-		service = new ArrayList<CardDto>();
+		cardDeck = new ArrayList<CardDto>();
 		scan = new Scanner(System.in);
 	}
 
@@ -23,21 +25,24 @@ public class Service {
 			int rndNum1 = (int) (Math.random() * 4) + 1;
 			int rndNum2 = (int) (Math.random() * 13) + 1;
 
-			dto.pattern = dto.cardPat(rndNum1);
-			dto.cardNumber = dto.cardNum(rndNum2);
-			
-			
-			card[i] = dto.pattern + dto.cardNumber;
+			patterns = dto.cardPat(rndNum1);
+			cardNumbers = dto.cardNum(rndNum2);
+
+			dto.pattern = patterns;
+			dto.cardNumber = cardNumbers;
+
+			card[i] = patterns + cardNumbers;
 			for (int j = 0; j < i; j++) {
 				if (card[j].equals(card[i])) {
 					i--;
 					break;
 				}
 			}
-			
+
 		}
-		service.add(dto);
+		cardDeck.add(dto);
 	}
+
 
 	public void start() {
 		System.out.println("플레이어에게 전달된 카드");
@@ -49,42 +54,20 @@ public class Service {
 			System.out.println("한장 더 뽑으시겠습니까?(Hit/Stop)");
 			String str = scan.nextLine();
 			// Hit 입력 시
-			for (int i = 4; i < card.length; i++) {
-				if (str.equalsIgnoreCase("Hit")) {
-					count ++;
-					i++;
-					
-					System.out.println("뽑은 카드");
-					System.out.println(card[i]);
-				}
-				if (str.equalsIgnoreCase("Stop")) {
-					break;
-				}
+				if (str.equals("Hit")) {
+					for (CardDto card : cardDeck) {
+						System.out.println(card);
+					}
+			}
+
+			if (str.equals("Stop")) {
+				break;
 			}
 			if (str.equalsIgnoreCase("Stop")) {
 				break;
 			}
 		}
 		CardDto dto = new CardDto();
-		
-		int intPl = 0;
-		if (dto.cardNumber == "A") {
-			intPl = 1;
-		} else if (dto.cardNumber == "J") {
-			intPl = 11;
-		} else if (dto.cardNumber == "Q") {
-			intPl = 12;
-		} else if (dto.cardNumber == "K") {
-			intPl = 13;
-		} else if (dto.cardNumber != "" ) {
-			intPl = Integer.valueOf(dto.cardNumber);
-		}
-		String plNum = "01";
-		if (service.size() > 0) {
-			plNum = service.get(service.size() - 1).cardNumber;
-		}
-		int intPlNum = Integer.valueOf(plNum.substring(1));
-		intPl++;
 
 	}
 
