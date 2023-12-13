@@ -3,7 +3,6 @@ package card.model;
 public class CardDto {
 	public String pattern; // 무늬
 	public String cardNumber; // 숫자
-	
 
 	public String cardPat(int rndNum1) {
 		if (rndNum1 == 1) {
@@ -14,10 +13,8 @@ public class CardDto {
 			pattern = "♥";
 		} else if (rndNum1 == 4) {
 			pattern = "◆";
-
 		}
 		return String.valueOf(pattern);
-
 	}
 
 	public String cardNum(int rndNum2) {
@@ -32,11 +29,10 @@ public class CardDto {
 		} else {
 			cardNumber = String.valueOf(rndNum2);
 		}
-		return String.valueOf(cardNumber);
+		return cardNumber;
 	}
 	
-	public int intCard() {
-		CardDto dto = new CardDto();
+	public Integer intCard(String cardNumber) {
 		if (cardNumber.equals("A")) {
 			return 1;
 		} else if (cardNumber.equals("J")) {
@@ -48,7 +44,5 @@ public class CardDto {
 		} else {
 			return Integer.valueOf(cardNumber);
 		}
-
 	}
-	
 }
