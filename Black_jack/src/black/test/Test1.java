@@ -1,35 +1,35 @@
-package card.service;
+package black.test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import card.model.CardDto;
+import black.card.CardBase;
 
-public class Service {
-	List<CardDto> cardDeck = null;
+public class Test1 {
+	List<CardBase> cardDeck = null;
 	String patterns;
 	String cardNumbers;
 	String[] card;
 	Scanner scan = null;
 
-	public Service() {
-		cardDeck = new ArrayList<CardDto>();
+	public Test1() {
+		cardDeck = new ArrayList<CardBase>();
 		scan = new Scanner(System.in);
 	}
 
 	public void cardDeck() {
-		CardDto dto = new CardDto();
+		CardBase base = new CardBase();
 		card = new String[52];
 		for (int i = 0; i < card.length; i++) {
 			int rndNum1 = (int) (Math.random() * 4) + 1;
 			int rndNum2 = (int) (Math.random() * 13) + 1;
 
-			patterns = dto.cardPat(rndNum1);
-			cardNumbers = dto.cardNum(rndNum2);
+			patterns = base.cardPat(rndNum1);
+			cardNumbers = base.cardNum(rndNum2);
 
-			dto.pattern = patterns;
-			dto.cardNumber = cardNumbers;
+			base.pattern = patterns;
+			base.cardNumber = cardNumbers;
 
 			card[i] = patterns + cardNumbers;
 			for (int j = 0; j < i; j++) {
@@ -40,7 +40,7 @@ public class Service {
 			}
 
 		}
-		cardDeck.add(dto);
+		cardDeck.add(base);
 	}
 
 
@@ -55,7 +55,7 @@ public class Service {
 			String str = scan.nextLine();
 			// Hit 입력 시
 				if (str.equals("Hit")) {
-					for (CardDto card : cardDeck) {
+					for (CardBase card : cardDeck) {
 						System.out.println(card);
 					}
 			}
@@ -67,7 +67,7 @@ public class Service {
 				break;
 			}
 		}
-		CardDto dto = new CardDto();
+		CardBase base = new CardBase();
 
 	}
 

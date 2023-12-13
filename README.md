@@ -1,17 +1,12 @@
-# 한국경영원 인재개발원 Spring FullStack 과정
+# 52장의 카드 만들기
+* 카드 무늬 (♠, ♣, ♥, ◆) 와 숫자(A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K)를 만든다.
 
-## Java project
-- 2023년 11월 20일 부터
+# 카드 섞기
+* 만든 카드 무늬와 숫자를 랜덤수로 구하고 같은 값이 만들어질 경우 리턴한다.
 
-### 프로젝트 github 에 push(commit) 하기
-- 원격 Repository : **Biz-2023-11-505-java**
-- 로컬 Repository : bash에서 **git init**
-- 원격 연결 : bash **git remote...** 복사 붙이기
-- 로컬파일, 폴더 압축하여 저장 : **git add .**
-- commit 설정 : **git commit -m "자바 시작"**
-- push(Upliad) :**git push -u origin master**
 
-#### 파일변경, 추가, 한 후 Repository push 하기
-- 압축하기 : **git add .**
-- commit(왜 commit 했는가?) : **git commit -m "hello 2 프로젝트 작성"**
-- push : **git push**
+# 점수 표시하기
+
+
+## 오류.....
+딜러의 첫번째, 두번째 카드는 플레이어의 세번째, 네번째 카드로 오는 오류가 어떻게 고쳐야 할지 모르겠음.......
