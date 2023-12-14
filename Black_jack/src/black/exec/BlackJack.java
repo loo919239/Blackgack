@@ -6,7 +6,6 @@ public class BlackJack {
 
 	public static void main(String[] args) {
 		Print print = new Print();
-		Print printBlackJack = new Print();
 		
 		print.printBlack();
 		

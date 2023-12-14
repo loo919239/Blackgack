@@ -8,8 +8,17 @@ public class Print {
 		scan = new Scanner(System.in);
 	}
 	public void printBlack() {
-//		CardRule cardRulse = new CardRule();
-		CardRule cardRulse = new CardRule();
+		CardRuleB cardRulse = new CardRuleB();
+//		CardRule2 cardRulse = new CardRule2();
+		
+		System.out.println("[Web발신]");
+		System.out.println("(광고)'Black Jack 하고 갈래요?'");
+		System.out.println("기다리던 그 게임, 드디어 출시!!\n");
+		System.out.print("$$지금 바로 플레이 하세요!!$$\n"
+				+ "Ｂｌａ✰ｃｋ ★ Ｊａｃｋ✠ ㅂㅏ로ㄱrㄱ1 (Enter) →");
+		System.out.println();
+		String next = scan.nextLine();
+		
 		while(true) {
 			cardRulse.printBlackJeckFinal();
 			System.out.println("게임을 재시작 하겠습니까?(Yse/No)");
