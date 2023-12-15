@@ -40,16 +40,6 @@ public class CardRuleA implements RuleService {
 					break;
 				}
 			}
-			String[] cardView = {
-					String.format("┌──────┐ "),
-					String.format("│  %1s   │ ", card[i].substring(0,1)),
-					String.format("│      │ "),
-					String.format("│      │ "),
-					String.format("│  %2s  │ ", card[i].substring(1)),
-					String.format("└──────┘ ")
-					
-			};
-			cardList.add(cardView);
 		}// end for 1
 
 		
