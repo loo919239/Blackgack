@@ -4,26 +4,29 @@ import black.card.CardBase;
 import black.utils.Line;
 
 public class CardRuleB extends CardRuleA {
-
+	
+	
 	public CardRuleB() {
 		super();
 	}
+	
 
 	public void printBlackJeckFinal() {
 		CardBase base = new CardBase();
 		this.cardDeck();
 		int playerScore = 0;
 		int dealerScore = 0;
-		String strString = "";
 
 		int lineNum = 20;
+		CardRuleA cRule = new CardRuleA();
+		
 
 		Line.dLine(lineNum);
 		System.out.print("\t       BlackJekc\n");
 		Line.sLine(lineNum);
 
 		System.out.print("플레이어의 이름을 입력해 주세요 >> ");
-		String name = scan.nextLine();
+		String name = scan.next();
 		Line.dLine(lineNum);
 		
 		System.out.println("딜러가 카드를 섞습니다...");
@@ -34,10 +37,12 @@ public class CardRuleB extends CardRuleA {
 			String score = card[i].substring(1);
 			dealerScore += base.intCard(score);
 		}
-		
+			
 		System.out.println(name + "님에게 전달된 카드");
 		System.out.printf("%s   %s\n", card[0], card[1]);
-
+				
+		
+		
 		int plCount = 1;
 		for (int i = 0; i < plCount + 1; i++) {
 			String score = card[i].substring(1);
@@ -49,11 +54,15 @@ public class CardRuleB extends CardRuleA {
 		while (true) {
 			System.out.println("한장 더 뽑으시겠습니까?");
 			System.out.print("(Hit/Stop) >> ");
-			String str = scan.nextLine();
+			String str = scan.next();
+			
+			if (!str.equalsIgnoreCase("Hit")&&!str.equalsIgnoreCase("Stop")) {
+				System.out.println("다시 입력해 주세요");
+					continue;
+				}
 			
 			if (dealerScore < 17) {
-				for (int i = 0; i < i + 1; i++) {
-					i++;
+				for (int i = 0; i < i + 1;) {
 					Line.dLine(lineNum);
 					System.out.println("딜러가 카드 한 장을 가져갑니다...");
 					Line.dLine(lineNum);
@@ -68,8 +77,7 @@ public class CardRuleB extends CardRuleA {
 
 			if (str.equalsIgnoreCase("Hit")) {
 				plCount++;
-				for (int index = 0; index < index + 1; index++) {
-					index++;
+				for (int index = 0; index < index + 1;) {
 					System.out.println(name + "님이 뽑은 카드");
 					System.out.println(card[plCount]);
 					Line.sLine(lineNum);

@@ -1,5 +1,7 @@
 package black.rule;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import black.card.CardBase;
@@ -10,9 +12,14 @@ public class CardRuleA implements RuleService {
 	String[] card;
 	String patterns;
 	String cardNumbers;
-
+	
+	List<String[]> cardList = null;
+	
+	String[] cardView;
+	
 	public CardRuleA() {
 		scan = new Scanner(System.in);
+		cardList = new ArrayList<String[]>();
 	}
 
 	public void cardDeck() {
@@ -26,13 +33,28 @@ public class CardRuleA implements RuleService {
 			cardNumbers = base.cardNum(rndNum2);
 
 			card[i] = patterns + cardNumbers;
+
 			for (int j = 0; j < i; j++) {
 				if (card[j].equals(card[i])) {
 					i--;
 					break;
 				}
 			}
+			String[] cardView = {
+					String.format("┌──────┐ "),
+					String.format("│  %1s   │ ", card[i].substring(0,1)),
+					String.format("│      │ "),
+					String.format("│      │ "),
+					String.format("│  %2s  │ ", card[i].substring(1)),
+					String.format("└──────┘ ")
+					
+			};
+			cardList.add(cardView);
 		}// end for 1
+
+		
+		
+		
 	}// end cardDeck()
 
 	public void printBlackJeckFinal() {
@@ -49,6 +71,7 @@ public class CardRuleA implements RuleService {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 	
 	

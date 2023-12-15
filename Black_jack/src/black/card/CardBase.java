@@ -1,8 +1,9 @@
 package black.card;
 
 public class CardBase {
-	public String pattern; // 무늬
-	public String cardNumber; // 숫자
+	private String pattern; // 무늬
+	private String cardNumber; // 숫자
+
 
 	public String cardPat(int rndNum1) {
 		if (rndNum1 == 1) {
@@ -31,7 +32,7 @@ public class CardBase {
 		}
 		return cardNumber;
 	}
-	
+
 	public Integer intCard(String cardNumber) {
 		if (cardNumber.equals("A")) {
 			return 1;
@@ -45,4 +46,5 @@ public class CardBase {
 			return Integer.valueOf(cardNumber);
 		}
 	}
+
 }
